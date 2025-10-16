@@ -3,203 +3,137 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Byeonggyu Park — Robotics & NLoS Perception</title>
-  <meta name="description" content="Graduate student at Seoul National University. Researching Non‑Line‑of‑Sight Perception using Radar and Acoustic Sensors; passionate about Robotics, Sensor Fusion, and Real‑Time Systems." />
-  <meta property="og:title" content="Byeonggyu Park — Robotics & NLoS Perception" />
-  <meta property="og:description" content="Graduate student at Seoul National University. Researching NLoS Perception with Radar & Acoustic sensors." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="" />
-  <meta name="theme-color" content="#0ea5e9" />
+  <title>Byeonggyu Park — Academic Portfolio</title>
+  <meta name="description" content="Academic profile of Byeonggyu Park, Graduate Student at Seoul National University researching Non-Line-of-Sight (NLoS) Perception and Sensor Fusion for Robotics and Autonomous Systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b1220; /* deep navy */
-      --card:#0f172a; /* slate-900 */
-      --muted:#94a3b8; /* slate-400 */
-      --text:#e2e8f0; /* slate-200 */
-      --accent:#22d3ee; /* cyan-400 */
-      --pill:#1f2937; /* gray-800 */
-      --link:#38bdf8; /* sky-400 */
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --accent:#0f4c81;
+      --border:#e5e7eb;
+      --link:#0f4c81;
+      --card:#f9fafb;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0b1220,#0b1220 60%,#0a0f1a);color:var(--text);line-height:1.6}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Merriweather',serif;color:var(--text);background:var(--bg);line-height:1.7}
+    header{border-bottom:2px solid var(--border);padding:40px 20px;text-align:center}
+    header h1{font-family:'Inter',sans-serif;font-weight:700;font-size:32px;margin-bottom:6px;color:var(--accent)}
+    header p{color:var(--muted);font-size:17px}
+    main{max-width:900px;margin:0 auto;padding:40px 20px}
+    section{margin-bottom:50px}
+    h2{border-left:5px solid var(--accent);padding-left:12px;margin-bottom:20px;font-size:22px;color:var(--accent);font-family:'Inter',sans-serif}
+    ul{margin-left:22px}
+    li{margin:8px 0}
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:980px;margin:0 auto;padding:24px}
-    header{display:flex;gap:18px;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(11,18,32,.7);backdrop-filter:blur(10px);border-bottom:1px solid #1e293b;padding:10px 24px;z-index:30}
-    nav a{margin:0 12px;font-weight:600;color:#cbd5e1}
-    nav a:hover{color:#fff}
-    .hero{display:grid;grid-template-columns:1fr;gap:16px;padding:48px 0 16px}
-    .title{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:.2px;line-height:1.15}
-    .subtitle{color:var(--muted)}
-
-    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .pill{background:var(--pill);color:#cbd5e1;border:1px solid #1f2a40;padding:6px 10px;border-radius:999px;font-size:13px}
-
-    section{margin:26px 0}
-    .card{background:linear-gradient(180deg,#0f172a,#0e1526);border:1px solid #1f2a40;border-radius:16px;padding:20px}
-    h2{font-size:22px;margin:0 0 12px}
-    h3{font-size:16px;margin:16px 0 6px;color:#cbd5e1}
-    .grid{display:grid;gap:14px}
-    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width:800px){.grid.cols-2{grid-template-columns:1fr}}
-
-    ul{margin:8px 0 0 18px;padding:0}
-    li{margin:6px 0}
-    .muted{color:var(--muted)}
-    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#0b1220;border:1px solid #23314d;border-bottom-color:#1e293b;padding:2px 6px;border-radius:6px}
-
-    .pub{display:flex;gap:12px}
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:10px;flex:0 0 auto}
-    .pub b{color:#fff}
-
-    footer{margin:40px 0 20px;color:#9aa7b9;text-align:center;font-size:14px}
-    .contacts a{display:inline-block;margin-right:12px}
-    .tag{font-size:12px;color:#a5b4fc;background:#1e1b4b;border:1px solid #312e81;border-radius:999px;padding:2px 8px}
+    .pub{margin-bottom:18px}
+    .pub-title{font-weight:600}
+    .pub i{color:var(--muted)}
+    footer{text-align:center;border-top:1px solid var(--border);margin-top:60px;padding:20px;color:var(--muted);font-size:14px}
+    .contact a{margin:0 8px;display:inline-block}
   </style>
 </head>
 <body>
   <header>
-    <div style="font-weight:800;letter-spacing:.3px;color:#fff">Byeonggyu Park</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#interests">Research</a>
-      <a href="#pubs">Publications</a>
-      <a href="#awards">Awards</a>
-      <a href="#activities">Activities</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Byeonggyu Park</h1>
+    <p>Graduate Student · Seoul National University<br>Autonomous Robot Intelligence Laboratory (ARIL)</p>
   </header>
 
-  <main class="container">
-    <section id="about" class="hero">
-      <div class="card">
-        <div class="title">👋 Hi, I'm <span style="color:#fff">Byeonggyu Park</span></div>
-        <p class="subtitle">
-          Graduate student at <b>Seoul National University</b> · Member of the <b>Autonomous Robot Intelligence Laboratory</b><br/>
-          Researching <b>Non‑Line‑of‑Sight Perception</b> using Radar and Acoustic Sensors. Passionate about <b>Robotics</b>, <b>Sensor Fusion</b>, <b>Autonomous Driving</b>, and <b>Real‑Time Systems</b>.
+  <main>
+    <section id="about" style="display:flex;align-items:center;gap:20px;">
+      <img src="imgs/profile.jpg" alt="Byeonggyu Park" style="width:130px;height:130px;border-radius:50%;border:2px solid #e5e7eb;object-fit:cover;">
+      <div>
+        <h2>About</h2>
+        <p>
+          I am a graduate student at <b>Seoul National University</b> and a member of the <b>Autonomous Robot Intelligence Laboratory</b>. 
+          My research focuses on <b>Non-Line-of-Sight (NLoS) Perception</b> and <b>Sensor Fusion</b> using radar and acoustic signals to enable robust situational awareness in autonomous systems. 
+          My broader interests lie in <b>robotics</b>, <b>AI perception</b>, <b>acoustic ray tracing</b>, and <b>real-time embedded systems</b>.
         </p>
-        <div class="pillrow">
-          <span class="pill">Radar · Acoustic</span>
-          <span class="pill">Sensor Fusion</span>
-          <span class="pill">NLoS Perception</span>
-          <span class="pill">Autonomous Driving</span>
-          <span class="pill">Real‑Time</span>
-        </div>
       </div>
     </section>
 
-    <section id="education" class="grid cols-2">
-      <div class="card">
-        <h2>🎓 Education</h2>
-        <ul>
-          <li><b>Seoul National University</b> (2025&nbsp;–&nbsp; )</li>
-          <li><b>Kookmin University</b> (2018&nbsp;–&nbsp;2024)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>🔬 Research Interests</h2>
-        <ul>
-          <li>Non‑Line‑of‑Sight (NLoS) Object Detection</li>
-          <li>Sensor Fusion (Radar, Camera, LiDAR, Sound, etc.)</li>
-          <li>AI Perception · Acoustic Ray Tracing · Signal Processing</li>
-          <li>Real‑Time Embedded Systems · Robotics</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="pubs" class="card">
-      <h2>📝 Publications</h2>
-      <div class="grid">
-        <div class="pub">
-          <div class="dot"></div>
-          <div>
-            <b>Byeonggyu Park</b>, Hee‑Yeun Kim, Byonghyok Choi, Hansang Cho, Byungkwan Kim, Soomok Lee, Mingu Jeon, and Seong‑Woo Kim,
-            <br/><b>“mmWave Radar‑Based Non‑Line‑of‑Sight Pedestrian Localization at T‑Junctions Utilizing Road Layout Extraction via Camera,”</b>
-            <br/><i>Accepted to IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>, 2025
-            [<a href="https://arxiv.org/abs/2508.02348" target="_blank" rel="noopener">arXiv</a>]
-          </div>
-        </div>
-        <div class="pub">
-          <div class="dot"></div>
-          <div>
-            Hee‑Yeun Kim, <b>Byeonggyu Park</b>, Byonghyok Choi, Hansang Cho, Byungkwan Kim, Soomok Lee, Mingu Jeon, Seung‑Woo Seo, and Seong‑Woo Kim,
-            <br/>“Radar‑Based NLoS Pedestrian Localization for Darting‑Out Scenarios Near Parked Vehicles with Camera‑Assisted Point Cloud Interpretation,”
-            <br/><i>Accepted to IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>, 2025
-            [<a href="https://arxiv.org/html/2508.04033v1" target="_blank" rel="noopener">arXiv</a>]
-          </div>
-        </div>
-        <div class="pub">
-          <div class="dot"></div>
-          <div>
-            Mingu Jeon, <b>Byeonggyu Park</b>, Hee‑Yeun Kim, Yujeong Kang, Byonghyok Choi, Hansang Cho, Byongkwan Kim, Soomok Lee, Seung‑Woo Seo, and Seong‑Woo Kim,
-            <br/>“Non‑Line‑of‑Sight Multi‑Target Localization in T‑Junctions Using Ray Tracing of mmWave Radar,”
-            <br/><i>To appear in IEEE Intelligent Vehicle Symposium (IV)</i>, June 2025
-            [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11097630&tag=1" target="_blank" rel="noopener">IEEE</a>]
-          </div>
-        </div>
-        <div class="pub">
-          <div class="dot"></div>
-          <div>
-            Mingu Jeon, Jae‑Kyung Cho, Hee‑Yeun Kim, <b>Byeonggyu Park</b>, Seung‑Woo Seo, and Seong‑Woo Kim,
-            <br/>“Non‑Line‑of‑Sight Vehicle Localization based on Sound,”
-            <br/><i>IEEE Transactions on Intelligent Transportation Systems</i>, Vol. 26, No. 2, pp. 2321–2338
-            [<a href="https://ieeexplore.ieee.org/document/10790925" target="_blank" rel="noopener">IEEE</a>]
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="awards" class="card">
-      <h2>🏆 Awards</h2>
+    <section id="education">
+      <h2>Education</h2>
       <ul>
-        <li>🥇 <b>Grand prize (1st place)</b> — Scale‑Car‑Based Autonomous Driving Competition</li>
-        <li>🥉 <b>Third Place</b> — International Automotive Creative Competition (Autonomous Driving Division)</li>
-        <li>🌟 <b>Innovation Award</b> — Future Mobility Urban Challenge (SNU)</li>
-        <li>🥇 <b>Best Award</b> — XR‑Based Autonomous Driving Competition (University Innovation Program)</li>
-        <li>🥇 <b>Grand prize (1st place)</b> — International University EV Autonomous Driving Competition</li>
-        <li>🥈 <b>2nd Place (President’s Award)</b> — 2023 Baemin Autonomous Driving Challenge</li>
-        <li>🥇 <b>Grand prize (1st place)</b> & 🌟 <b>Special Award</b> — 2023 HL Mando & HL Klemove Autonomous Mobility Challenge</li>
+        <li><b>Seoul National University</b> — Integrated M.S./Ph.D. Program (2025 – Present)</li>
+        <li><b>Kookmin University</b> — B.S. in Computer Science (2018 – 2024)</li>
       </ul>
     </section>
 
-    <section id="activities" class="card">
-      <h2>🚀 Activities</h2>
-      <h3>World Solar Challenge 2025 – SNU Solo Team</h3>
-      <p class="muted">Strategy Team Member · Real‑time telemetry, route optimization, and energy management for a solar‑powered vehicle.</p>
-      <h3>UCI Internship – Platoon of Autonomous Vehicles</h3>
-      <p class="muted">University of California, Irvine (2022.01.03 ~ 2022.02.25). Research internship on multi‑vehicle platooning and autonomous vehicle control strategies using simulation and sensor fusion.</p>
-      <h3>Mentor – Samsung SDS Smart Hackathon</h3>
-      <p class="muted">(2021.04 ~ 2021.06). Mentored teams on algorithms and prototyping for smart‑city solutions.</p>
-      <h3>FOSCAR – Autonomous Driving Club</h3>
-      <p class="muted">(2022.09 ~ 2024.02). Contributed to perception, planning, and control for a 1/4‑scale autonomous vehicle.</p>
+    <section id="research">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Non-Line-of-Sight (NLoS) Object Detection and Scene Understanding</li>
+        <li>Sensor Fusion across Radar, Camera, LiDAR, and Acoustic Modalities</li>
+        <li>AI-based Perception, Acoustic Ray Tracing, and Signal Processing</li>
+        <li>Embedded Real-Time Systems for Autonomous Robotics</li>
+      </ul>
     </section>
 
-    <section id="contact" class="card">
-      <h2>📫 Contact</h2>
-      <div class="contacts">
-        <a href="mailto:bg.park@snu.ac.kr">bg.park@snu.ac.kr</a>
-        · <a href="https://github.com/Bingurrr" target="_blank" rel="noopener">GitHub</a>
-        · <a href="https://scholar.google.com/citations?user=3PMUIP8AAAAJ&hl=ko" target="_blank" rel="noopener">Google Scholar</a>
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <div class="pub">
+        <div class="pub-title"><b>Byeonggyu Park</b>, Hee-Yeun Kim, Byonghyok Choi, Hansang Cho, Byungkwan Kim, Soomok Lee, Mingu Jeon, and Seong-Woo Kim,<br>
+        “<b>mmWave Radar-Based Non-Line-of-Sight Pedestrian Localization at T-Junctions Utilizing Road Layout Extraction via Camera</b>.”<br>
+        <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025.</i> [<a href="https://arxiv.org/abs/2508.02348">arXiv</a>]</div>
       </div>
-      <p class="muted" style="margin-top:10px">Last updated: <span id="lastUpdated">Oct 2025</span></p>
+      <div class="pub">
+        <div class="pub-title">Hee-Yeun Kim, <b>Byeonggyu Park</b>, et al., “<b>Radar-Based NLoS Pedestrian Localization for Darting-Out Scenarios Near Parked Vehicles with Camera-Assisted Point Cloud Interpretation</b>.”<br>
+        <i>IROS 2025.</i> [<a href="https://arxiv.org/html/2508.04033v1">arXiv</a>]</div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Mingu Jeon, <b>Byeonggyu Park</b>, et al., “<b>Non-Line-of-Sight Multi-Target Localization in T-Junctions Using Ray Tracing of mmWave Radar</b>.”<br>
+        <i>IEEE Intelligent Vehicle Symposium (IV), 2025.</i> [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11097630&tag=1">IEEE</a>]</div>
+      </div>
+      <div class="pub">
+        <div class="pub-title">Mingu Jeon, <b>Byeonggyu Park</b>, et al., “<b>Non-Line-of-Sight Vehicle Localization based on Sound</b>.”<br>
+        <i>IEEE Transactions on Intelligent Transportation Systems, Vol. 26, No. 2, 2025.</i> [<a href="https://ieeexplore.ieee.org/document/10790925">IEEE</a>]</div>
+      </div>
     </section>
 
-    <section class="muted" style="text-align:center">
-      <span class="tag">Built with plain HTML/CSS · Deploy on GitHub Pages</span>
+    <section id="awards">
+      <h2>Awards & Honors</h2>
+      <ul>
+        <li>🥇 Grand Prize — Scale-Car-Based Autonomous Driving Competition</li>
+        <li>🥈 President’s Award — 2023 Baemin Autonomous Driving Challenge</li>
+        <li>🌟 Innovation Award — Future Mobility Urban Challenge (SNU)</li>
+        <li>🥇 Best Award — XR-Based Autonomous Driving Competition (University Innovation Program)</li>
+        <li>🥇 Grand Prize — International University EV Autonomous Driving Competition</li>
+        <li>🥇 Grand Prize & 🌟 Special Award — 2023 HL Mando & HL Klemove Autonomous Mobility Challenge</li>
+      </ul>
     </section>
 
-    <footer>
-      © <span id="y"></span> Byeonggyu Park. All rights reserved.
-    </footer>
+    <section id="activities">
+      <h2>Academic & Professional Activities</h2>
+      <ul>
+        <li><b>World Solar Challenge 2025 — SNU Solo Team</b><br>Strategy team member, responsible for real-time telemetry, route optimization, and energy management for solar-powered vehicles.</li>
+        <li><b>UCI Internship — Platoon of Autonomous Vehicles</b><br>University of California, Irvine (2022). Research internship on multi-vehicle platooning and autonomous control strategies.</li>
+        <li><b>Mentor — Samsung SDS Smart Hackathon</b><br>Guided participants in algorithm design and smart-city prototyping (2021).</li>
+        <li><b>FOSCAR — Autonomous Driving Club</b><br>Developed perception and control systems for a 1/4-scale autonomous vehicle (2022–2024).</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact">
+        📧 <a href="mailto:bg.park@snu.ac.kr">bg.park@snu.ac.kr</a><br>
+        💻 <a href="https://github.com/Bingurrr">GitHub</a><br>
+        📚 <a href="https://scholar.google.com/citations?user=3PMUIP8AAAAJ&hl=ko">Google Scholar</a>
+      </p>
+      <p style="color:var(--muted);margin-top:6px">Last updated: October 2025</p>
+    </section>
   </main>
 
+  <footer>
+    © <span id="y"></span> Byeonggyu Park · All rights reserved.
+  </footer>
+
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('y').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>
