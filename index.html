@@ -38,61 +38,65 @@
     .contact a{margin:0 8px;display:inline-block}
 
     /* =========================
-       Publications (FINAL)
+       Publications
        - no bullets
        - thumbnail centered vs text block
+       - title -> authors -> venue order
        ========================= */
     .pub-list{
-      list-style:none;     /* ✅ 불렛 제거 */
-      margin-left:0;       /* ✅ ul 기본 들여쓰기 제거 */
+      list-style:none;
+      margin-left:0;
       padding-left:0;
     }
     .pub-list > li{
-      margin:18px 0;       /* 논문 간 간격 */
+      margin:18px 0;
     }
-
     .pub-row{
       display:flex;
-      align-items:center;  /* ✅ 핵심: 이미지가 오른쪽 텍스트 블록 중앙으로 */
+      align-items:center;
       gap:18px;
     }
-    
     .pub-media{
-      width:190px;           /* 가로 기준은 유지 */
-      height:130px;          /* 🔥 썸네일 '영역' 높이만 통일 */
+      width:190px;
+      height:130px;
       flex-shrink:0;
       display:flex;
-      align-items:center;    /* 세로 중앙 */
+      align-items:center;
       justify-content:center;
     }
-    
     .pub-thumb{
       max-width:100%;
       max-height:100%;
       width:auto;
       height:auto;
-      object-fit:contain;    /* 🔥 비율 유지 */
+      object-fit:contain;
       display:block;
       border-radius:10px;
       border:1px solid var(--border);
+      transition:transform 0.2s ease;
     }
-    
     .pub-thumb:hover{ transform:scale(1.02); }
 
     .pub-content{ flex:1; }
 
-    .pub-authors{
-      font-size:0.98em;
-      color:var(--text);
-      margin-bottom:2px;
-    }
+    /* requested text styling */
     .pub-paper-title{
       font-weight:700;
-      margin:2px 0;
+      margin:2px 0 4px 0;
       line-height:1.35;
+      color:#b91c1c;          /* red-700 */
+    }
+    .pub-authors{
+      font-size:0.97em;
+      color:var(--muted);     /* gray */
+      margin-bottom:2px;
+    }
+    .pub-authors .me{
+      font-weight:700;
+      color:var(--text);      /* black */
     }
     .pub-venue{
-      color:var(--muted);
+      color:var(--muted);     /* gray */
       margin:2px 0;
     }
     .pub-links{
@@ -140,7 +144,6 @@
       </ul>
     </section>
 
-    <!-- ✅ Publications: 섹션 내부 <style>는 완전히 삭제하고, 아래만 남기세요 -->
     <section id="publications">
       <h2>Selected Publications</h2>
 
@@ -155,13 +158,13 @@
             </div>
 
             <div class="pub-content">
-              <div class="pub-authors">
-                <b>Byeonggyu Park</b>, Hee-Yeun Kim, Byonghyok Choi, Hansang Cho,
-                Byungkwan Kim, Soomok Lee, Mingu Jeon, and Seong-Woo Kim
-              </div>
-
               <div class="pub-paper-title">
                 “mmWave Radar-Based Non-Line-of-Sight Pedestrian Localization at T-Junctions Utilizing Road Layout Extraction via Camera.”
+              </div>
+
+              <div class="pub-authors">
+                <span class="me">Byeonggyu Park</span>, Hee-Yeun Kim, Byonghyok Choi, Hansang Cho,
+                Byungkwan Kim, Soomok Lee, Mingu Jeon, and Seong-Woo Kim
               </div>
 
               <div class="pub-venue">
@@ -189,13 +192,13 @@
             </div>
 
             <div class="pub-content">
-              <div class="pub-authors">
-                Hee-Yeun Kim, <b>Byeonggyu Park</b>, Byonghyok Choi, Hansang Cho,
-                Byungkwan Kim, Soomok Lee, Mingu Jeon, Seung-Woo Seo, and Seong-Woo Kim
-              </div>
-
               <div class="pub-paper-title">
                 “Radar-Based NLoS Pedestrian Localization for Darting-Out Scenarios Near Parked Vehicles with Camera-Assisted Point Cloud Interpretation.”
+              </div>
+
+              <div class="pub-authors">
+                Hee-Yeun Kim, <span class="me">Byeonggyu Park</span>, Byonghyok Choi, Hansang Cho,
+                Byungkwan Kim, Soomok Lee, Mingu Jeon, Seung-Woo Seo, and Seong-Woo Kim
               </div>
 
               <div class="pub-venue">
@@ -222,14 +225,14 @@
             </div>
 
             <div class="pub-content">
-              <div class="pub-authors">
-                Mingu Jeon, <b>Byeonggyu Park</b>, Hee-Yeun Kim, Yujeong Kang,
-                Byonghyok Choi, Hansang Cho, Byungkwan Kim, Soomok Lee,
-                Seung-Woo Seo, and Seong-Woo Kim
-              </div>
-
               <div class="pub-paper-title">
                 “Non-Line-of-Sight Multi-Target Localization in T-Junctions Using Ray Tracing of mmWave Radar.”
+              </div>
+
+              <div class="pub-authors">
+                Mingu Jeon, <span class="me">Byeonggyu Park</span>, Hee-Yeun Kim, Yujeong Kang,
+                Byonghyok Choi, Hansang Cho, Byungkwan Kim, Soomok Lee,
+                Seung-Woo Seo, and Seong-Woo Kim
               </div>
 
               <div class="pub-venue">
@@ -255,17 +258,17 @@
             </div>
 
             <div class="pub-content">
-              <div class="pub-authors">
-                Mingu Jeon, Jae-Kyung Cho, Hee-Yeun Kim, <b>Byeonggyu Park</b>,
-                Seung-Woo Seo, and Seong-Woo Kim
-              </div>
-
               <div class="pub-paper-title">
                 “Non-Line-of-Sight Vehicle Localization based on Sound.”
               </div>
 
+              <div class="pub-authors">
+                Mingu Jeon, Jae-Kyung Cho, Hee-Yeun Kim, <span class="me">Byeonggyu Park</span>,
+                Seung-Woo Seo, and Seong-Woo Kim
+              </div>
+
               <div class="pub-venue">
-                <i>IEEE Transactions on Intelligent Transportation Systems, Vol. 26, No. 2, pp. 2321-2338, Feb. 2025.</i>
+                <i>IEEE Transactions on Intelligent Transportation Systems, Vol. 26, No. 2, pp. 2321–2338, Feb. 2025.</i>
               </div>
 
               <div class="pub-links">
