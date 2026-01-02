@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#ffffff;
@@ -31,40 +32,71 @@
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
     .pub{margin-bottom:18px}
-    .pub-title{font-weight:400}
     .paper-title{font-weight:700}
     .pub i{color:var(--muted)}
     footer{text-align:center;border-top:1px solid var(--border);margin-top:60px;padding:20px;color:var(--muted);font-size:14px}
     .contact a{margin:0 8px;display:inline-block}
 
-    /* --- Publications layout (thumbnail left, text right) --- */
+    /* =========================
+       Publications (FINAL)
+       - no bullets
+       - thumbnail centered vs text block
+       ========================= */
+    .pub-list{
+      list-style:none;     /* ✅ 불렛 제거 */
+      margin-left:0;       /* ✅ ul 기본 들여쓰기 제거 */
+      padding-left:0;
+    }
+    .pub-list > li{
+      margin:18px 0;       /* 논문 간 간격 */
+    }
+
     .pub-row{
       display:flex;
-      align-items:flex-start;
-      gap:16px;
+      align-items:center;  /* ✅ 핵심: 이미지가 오른쪽 텍스트 블록 중앙으로 */
+      gap:18px;
     }
-    
+
     .pub-media{
-      width:190px;          /* 썸네일 영역 폭 */
+      width:190px;         /* ✅ 썸네일 크기(조금 큼). 170~210 추천 */
       flex-shrink:0;
     }
-    
+
     .pub-thumb{
-      width:100% !important; /* 전역 img 스타일이 있어도 강제 */
+      width:100% !important;
       max-width:190px;
       height:auto;
       display:block;
-      border-radius:6px;
+      border-radius:10px;
+      border:1px solid var(--border);
       transition:transform 0.2s ease;
     }
-    
-    .pub-thumb:hover{ transform:scale(1.03); }
-    
-    .pub-content{ flex:1; }
-    .pub-title{ line-height:1.4; }
+    .pub-thumb:hover{ transform:scale(1.02); }
 
+    .pub-content{ flex:1; }
+
+    .pub-authors{
+      font-size:0.98em;
+      color:var(--text);
+      margin-bottom:2px;
+    }
+    .pub-paper-title{
+      font-weight:700;
+      margin:2px 0;
+      line-height:1.35;
+    }
+    .pub-venue{
+      color:var(--muted);
+      margin:2px 0;
+    }
+    .pub-links{
+      margin-top:6px;
+      font-family:'Inter',sans-serif;
+      font-weight:600;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Byeonggyu Park</h1>
@@ -76,11 +108,11 @@
       <img src="imgs/profile2.jpg" alt="Byeonggyu Park" style="width:200px;height:200px;border:2px solid #e5e7eb;object-fit:cover;">
       <div>
         <h2>Welcome to Byeonggyu’s Homepage! 👋</h2>
-          <ul style="margin-left:20px;">
-            <li>I am a graduate student at <b>Seoul National University</b> and a member of the <b>Autonomous Robot Intelligence Laboratory (ARIL)</b>.</li>
-            <li>My research focuses on <b>Non-Line-of-Sight (NLoS) object detection and scene understanding</b> through <b>multi-modal sensor fusion</b> across radar, camera, LiDAR, and acoustic modalities for robust perception in autonomous systems.</li>
-            <li>My broader interests include <b>physics-aware perception and learning</b>, <b>intelligent robotic systems</b>, and <b>human–robot interaction</b>.</li>
-          </ul>
+        <ul style="margin-left:20px;">
+          <li>I am a graduate student at <b>Seoul National University</b> and a member of the <b>Autonomous Robot Intelligence Laboratory (ARIL)</b>.</li>
+          <li>My research focuses on <b>Non-Line-of-Sight (NLoS) object detection and scene understanding</b> through <b>multi-modal sensor fusion</b> across radar, camera, LiDAR, and acoustic modalities for robust perception in autonomous systems.</li>
+          <li>My broader interests include <b>physics-aware perception and learning</b>, <b>intelligent robotic systems</b>, and <b>human–robot interaction</b>.</li>
+        </ul>
       </div>
     </section>
 
@@ -102,62 +134,12 @@
       </ul>
     </section>
 
+    <!-- ✅ Publications: 섹션 내부 <style>는 완전히 삭제하고, 아래만 남기세요 -->
     <section id="publications">
       <h2>Selected Publications</h2>
-    
-      <!-- Publications-only styles -->
-      <style>
-        /* list spacing */
-        .pub-list { margin-left: 22px; }
-        .pub-list li { margin: 14px 0; }
-    
-        /* row layout */
-        .pub-row{
-          display:flex;
-          align-items:flex-start;
-          gap:18px;
-        }
-    
-        /* thumbnail */
-        .pub-media{
-          width:170px;        /* ✅ 썸네일 크기 (조금 크게). 150~200으로 조절 가능 */
-          flex-shrink:0;
-        }
-        .pub-thumb{
-          width:100% !important;
-          max-width:170px;
-          height:auto;
-          display:block;
-          border-radius:8px;
-          border:1px solid var(--border);
-          transition:transform 0.2s ease;
-        }
-        .pub-thumb:hover{ transform:scale(1.02); }
-    
-        /* right content */
-        .pub-content{ flex:1; }
-        .pub-authors{
-          font-size: 0.98em;
-          color: var(--text);
-        }
-        .pub-paper-title{
-          font-weight:700;
-          margin-top: 2px;
-        }
-        .pub-venue{
-          color: var(--muted);
-          margin-top: 2px;
-        }
-        .pub-links{
-          margin-top: 6px;
-        }
-        .pub-links a{ font-family:'Inter',sans-serif; font-weight:600; }
-      </style>
-    
+
       <ul class="pub-list">
-        <!-- ===================== -->
         <!-- Paper 1 (Video) -->
-        <!-- ===================== -->
         <li>
           <div class="pub pub-row">
             <div class="pub-media">
@@ -165,21 +147,21 @@
                 <img src="imgs/IROS_Graphical_abstract.png" alt="Video Demo" class="pub-thumb">
               </a>
             </div>
-    
+
             <div class="pub-content">
               <div class="pub-authors">
                 <b>Byeonggyu Park</b>, Hee-Yeun Kim, Byonghyok Choi, Hansang Cho,
                 Byungkwan Kim, Soomok Lee, Mingu Jeon, and Seong-Woo Kim
               </div>
-    
+
               <div class="pub-paper-title">
                 “mmWave Radar-Based Non-Line-of-Sight Pedestrian Localization at T-Junctions Utilizing Road Layout Extraction via Camera.”
               </div>
-    
+
               <div class="pub-venue">
                 <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025.</i>
               </div>
-    
+
               <div class="pub-links">
                 [
                   <a href="https://ieeexplore.ieee.org/document/11246461" target="_blank">IEEE</a> |
@@ -190,69 +172,64 @@
             </div>
           </div>
         </li>
-    
-        <!-- ===================== -->
+
         <!-- Paper 2 (Video) -->
-        <!-- ===================== -->
         <li>
           <div class="pub pub-row">
             <div class="pub-media">
               <a href="https://www.youtube.com/watch?v=qIgP9w6GB9o" target="_blank">
-                <img src="imgs/IROS_2025_2.png" alt="Video Demo" class="pub-thumb">
+                <img src="imgs/IROS_2025_2.jpg" alt="Video Demo" class="pub-thumb">
               </a>
             </div>
-    
+
             <div class="pub-content">
               <div class="pub-authors">
                 Hee-Yeun Kim, <b>Byeonggyu Park</b>, Byonghyok Choi, Hansang Cho,
                 Byungkwan Kim, Soomok Lee, Mingu Jeon, Seung-Woo Seo, and Seong-Woo Kim
               </div>
-    
+
               <div class="pub-paper-title">
                 “Radar-Based NLoS Pedestrian Localization for Darting-Out Scenarios Near Parked Vehicles with Camera-Assisted Point Cloud Interpretation.”
               </div>
-    
+
               <div class="pub-venue">
                 <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025.</i>
               </div>
-    
+
               <div class="pub-links">
                 [
                   <a href="https://ieeexplore.ieee.org/document/11246930" target="_blank">IEEE</a> |
-                  <a href="https://arxiv.org/abs/2508.02348" target="_blank">arXiv</a> |
                   <a href="https://www.youtube.com/watch?v=qIgP9w6GB9o" target="_blank">Video</a>
                 ]
               </div>
             </div>
           </div>
         </li>
-    
-        <!-- ===================== -->
+
         <!-- Paper 3 (No Video) -->
-        <!-- ===================== -->
         <li>
           <div class="pub pub-row">
             <div class="pub-media">
               <a href="https://ieeexplore.ieee.org/document/11097630" target="_blank">
-                <img src="imgs/IV_2025.png" alt="Paper Thumbnail" class="pub-thumb">
+                <img src="imgs/IV_2025.jpg" alt="Paper Thumbnail" class="pub-thumb">
               </a>
             </div>
-    
+
             <div class="pub-content">
               <div class="pub-authors">
                 Mingu Jeon, <b>Byeonggyu Park</b>, Hee-Yeun Kim, Yujeong Kang,
                 Byonghyok Choi, Hansang Cho, Byungkwan Kim, Soomok Lee,
                 Seung-Woo Seo, and Seong-Woo Kim
               </div>
-    
+
               <div class="pub-paper-title">
                 “Non-Line-of-Sight Multi-Target Localization in T-Junctions Using Ray Tracing of mmWave Radar.”
               </div>
-    
+
               <div class="pub-venue">
                 <i>36th IEEE Intelligent Vehicles Symposium (IV 2025), IEEE, 2025.</i>
               </div>
-    
+
               <div class="pub-links">
                 [
                   <a href="https://ieeexplore.ieee.org/document/11097630" target="_blank">IEEE</a>
@@ -261,32 +238,30 @@
             </div>
           </div>
         </li>
-    
-        <!-- ===================== -->
+
         <!-- Paper 4 (Video) -->
-        <!-- ===================== -->
         <li>
           <div class="pub pub-row">
             <div class="pub-media">
               <a href="https://www.youtube.com/watch?v=TTrg3_sEC64" target="_blank">
-                <img src="imgs/TITS_2025.png" alt="Video Demo" class="pub-thumb">
+                <img src="imgs/TITS_2025.jpg" alt="Video Demo" class="pub-thumb">
               </a>
             </div>
-    
+
             <div class="pub-content">
               <div class="pub-authors">
                 Mingu Jeon, Jae-Kyung Cho, Hee-Yeun Kim, <b>Byeonggyu Park</b>,
                 Seung-Woo Seo, and Seong-Woo Kim
               </div>
-    
+
               <div class="pub-paper-title">
                 “Non-Line-of-Sight Vehicle Localization based on Sound.”
               </div>
-    
+
               <div class="pub-venue">
                 <i>IEEE Transactions on Intelligent Transportation Systems, Vol. 26, No. 2, 2025.</i>
               </div>
-    
+
               <div class="pub-links">
                 [
                   <a href="https://ieeexplore.ieee.org/document/10790925" target="_blank">IEEE</a> |
@@ -304,10 +279,7 @@
       <ul>
         <li>🥇 Grand Prize (1st place) — Scale-Car-Based Autonomous Driving Competition</li>
         <li>🥈 2nd Place (President’s Award) — 2023 Baemin Autonomous Driving Challenge</li>
-        <!-- <li>🥉 3rd Place — International Automotive Creative Competition (Autonomous Driving Division)</li> -->
         <li>🌟 Innovation Award — Future Mobility Urban Challenge (Seoul National University)</li>
-        <!-- <li>🥈 2nd Place (President’s Award) — XR-Based Autonomous Driving Competition</li> -->
-        <!-- <li>🥇 Grand prize (1st place) — International University EV Autonomous Driving Competition</li> -->
         <li>🥇 Grand prize (1st place) & 🌟 Special Award — 2023 HL Mando & HL Klemove Autonomous Mobility Challenge</li>
       </ul>
     </section>
