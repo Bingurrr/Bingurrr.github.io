@@ -56,21 +56,27 @@
       align-items:center;  /* ✅ 핵심: 이미지가 오른쪽 텍스트 블록 중앙으로 */
       gap:18px;
     }
-
+    
     .pub-media{
-      width:220px;         /* ✅ 썸네일 크기(조금 큼). 170~210 추천 */
+      width:190px;           /* 가로 기준은 유지 */
+      height:130px;          /* 🔥 썸네일 '영역' 높이만 통일 */
       flex-shrink:0;
+      display:flex;
+      align-items:center;    /* 세로 중앙 */
+      justify-content:center;
     }
-
+    
     .pub-thumb{
-      width:100% !important;
-      max-width:220px;
+      max-width:100%;
+      max-height:100%;
+      width:auto;
       height:auto;
+      object-fit:contain;    /* 🔥 비율 유지 */
       display:block;
       border-radius:10px;
       border:1px solid var(--border);
-      transition:transform 0.2s ease;
     }
+    
     .pub-thumb:hover{ transform:scale(1.02); }
 
     .pub-content{ flex:1; }
@@ -159,7 +165,7 @@
               </div>
 
               <div class="pub-venue">
-                <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025.</i>
+                <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Oct. 2025</i>
               </div>
 
               <div class="pub-links">
@@ -193,7 +199,7 @@
               </div>
 
               <div class="pub-venue">
-                <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025.</i>
+                <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Oct. 2025</i>
               </div>
 
               <div class="pub-links">
@@ -227,7 +233,7 @@
               </div>
 
               <div class="pub-venue">
-                <i>36th IEEE Intelligent Vehicles Symposium (IV 2025), IEEE, 2025.</i>
+                <i>IEEE Intelligent Vehicle Symposium (IV), June 2025</i>
               </div>
 
               <div class="pub-links">
@@ -259,7 +265,7 @@
               </div>
 
               <div class="pub-venue">
-                <i>IEEE Transactions on Intelligent Transportation Systems, Vol. 26, No. 2, 2025.</i>
+                <i>IEEE Transactions on Intelligent Transportation Systems, Vol. 26, No. 2, pp. 2321-2338, Feb. 2025.</i>
               </div>
 
               <div class="pub-links">
