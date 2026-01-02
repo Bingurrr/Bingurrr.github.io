@@ -18,6 +18,7 @@
       --border:#e5e7eb;
       --link:#0f4c81;
       --card:#f9fafb;
+      --red:#b91c1c; /* title color */
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Merriweather',serif;color:var(--text);background:var(--bg);line-height:1.7}
@@ -42,6 +43,7 @@
        - no bullets
        - thumbnail centered vs text block
        - title -> authors -> venue order
+       - link buttons
        ========================= */
     .pub-list{
       list-style:none;
@@ -79,30 +81,61 @@
 
     .pub-content{ flex:1; }
 
-    /* requested text styling */
     .pub-paper-title{
       font-weight:700;
-      margin:2px 0 4px 0;
+      margin:2px 0 6px 0;
       line-height:1.35;
-      color:#b91c1c;          /* red-700 */
+      color:var(--red);
     }
     .pub-authors{
       font-size:0.97em;
-      color:var(--muted);     /* gray */
+      color:var(--muted);
       margin-bottom:2px;
     }
     .pub-authors .me{
       font-weight:700;
-      color:var(--text);      /* black */
+      color:var(--text);
     }
     .pub-venue{
-      color:var(--muted);     /* gray */
+      color:var(--muted);
       margin:2px 0;
     }
+
+    /* Link buttons */
     .pub-links{
-      margin-top:6px;
+      margin-top:10px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
       font-family:'Inter',sans-serif;
       font-weight:600;
+    }
+    .pub-links a{
+      display:inline-block;
+      padding:4px 10px;
+      font-size:0.85em;
+      color:var(--accent);
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:#f9fafb;
+      text-decoration:none;
+      transition:all 0.15s ease;
+    }
+    .pub-links a:hover{
+      background:var(--accent);
+      color:#ffffff;
+      border-color:var(--accent);
+      text-decoration:none;
+    }
+    .pub-links a.video{
+      color:var(--red);
+      border-color:#fca5a5;
+      background:#fff5f5;
+    }
+    .pub-links a.video:hover{
+      background:var(--red);
+      border-color:var(--red);
+      color:#ffffff;
     }
   </style>
 </head>
@@ -119,7 +152,14 @@
       <div>
         <h2>Welcome to Byeonggyu’s Homepage! 👋</h2>
         <ul style="margin-left:20px;">
-          <li>I am a graduate student at <b>Seoul National University</b> and a member of the <b>Autonomous Robot Intelligence Laboratory (ARIL)</b>.</li>
+          <li>
+            I am a graduate student at <b>Seoul National University</b> and a member of the
+            <b>
+              <a href="https://arisnu.squarespace.com/" target="_blank">
+                Autonomous Robot Intelligence Laboratory (ARIL)
+              </a>
+            </b>.
+          </li>
           <li>My research focuses on <b>Non-Line-of-Sight (NLoS) object detection and scene understanding</b> through <b>multi-modal sensor fusion</b> across radar, camera, LiDAR, and acoustic modalities for robust perception in autonomous systems.</li>
           <li>My broader interests include <b>physics-aware perception and learning</b>, <b>intelligent robotic systems</b>, and <b>human–robot interaction</b>.</li>
         </ul>
@@ -172,11 +212,9 @@
               </div>
 
               <div class="pub-links">
-                [
-                  <a href="https://ieeexplore.ieee.org/document/11246461" target="_blank">IEEE</a> |
-                  <a href="https://arxiv.org/abs/2508.02348" target="_blank">arXiv</a> |
-                  <a href="https://www.youtube.com/watch?v=LXkU1HAPSBQ" target="_blank">Video</a>
-                ]
+                <a href="https://ieeexplore.ieee.org/document/11246461" target="_blank">IEEE</a>
+                <a href="https://arxiv.org/abs/2508.02348" target="_blank">arXiv</a>
+                <a href="https://www.youtube.com/watch?v=LXkU1HAPSBQ" target="_blank" class="video">Video</a>
               </div>
             </div>
           </div>
@@ -206,10 +244,9 @@
               </div>
 
               <div class="pub-links">
-                [
-                  <a href="https://ieeexplore.ieee.org/document/11246930" target="_blank">IEEE</a> |
-                  <a href="https://www.youtube.com/watch?v=qIgP9w6GB9o" target="_blank">Video</a>
-                ]
+                <a href="https://ieeexplore.ieee.org/document/11246930" target="_blank">IEEE</a>
+                <a href="https://arxiv.org/abs/2508.04033" target="_blank">arXiv</a>
+                <a href="https://www.youtube.com/watch?v=qIgP9w6GB9o" target="_blank" class="video">Video</a>
               </div>
             </div>
           </div>
@@ -240,9 +277,7 @@
               </div>
 
               <div class="pub-links">
-                [
-                  <a href="https://ieeexplore.ieee.org/document/11097630" target="_blank">IEEE</a>
-                ]
+                <a href="https://ieeexplore.ieee.org/document/11097630" target="_blank">IEEE</a>
               </div>
             </div>
           </div>
@@ -272,10 +307,8 @@
               </div>
 
               <div class="pub-links">
-                [
-                  <a href="https://ieeexplore.ieee.org/document/10790925" target="_blank">IEEE</a> |
-                  <a href="https://www.youtube.com/watch?v=TTrg3_sEC64" target="_blank">Video</a>
-                ]
+                <a href="https://ieeexplore.ieee.org/document/10790925" target="_blank">IEEE</a>
+                <a href="https://www.youtube.com/watch?v=TTrg3_sEC64" target="_blank" class="video">Video</a>
               </div>
             </div>
           </div>
